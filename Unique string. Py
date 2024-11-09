@@ -1,0 +1,63 @@
+-
+
+### Check if String Has All Unique Characters:
+```python
+def has_unique_characters(s):
+    # Using a set to track seen characters
+    seen = set()
+    for char in s:
+        if char in seen:
+            return False  # Duplicate found
+        seen.add(char)
+    return True
+
+# Example usage
+text = input("Enter a string: ")
+if has_unique_characters(text):
+    print(f'"{text}" has all unique characters.')
+else:
+    print(f'"{text}" does not have all unique characters.')
+```
+
+---
+
+### Find All Unique Characters in a String:
+```python
+def find_unique_characters(s):
+    # Use a dictionary to count character frequencies
+    from collections import Counter
+    frequency = Counter(s)
+    # Return characters that appear only once
+    return [char for char, count in frequency.items() if count == 1]
+
+# Example usage
+text = input("Enter a string: ")
+unique_chars = find_unique_characters(text)
+print(f"Unique characters in '{text}': {unique_chars}")
+```
+
+---
+
+### Explanation:
+1. **Check for All Unique Characters**:
+   - Uses a `set` to keep track of characters encountered while iterating through the string.
+   - If a character is already in the set, it returns `False`.
+
+2. **Find All Unique Characters**:
+   - Uses `collections.Counter` to count character occurrences.
+   - Filters characters that appear only once.
+
+---
+
+### Example Outputs:
+
+#### **Check for All Unique Characters**:
+**Input**: `hello`  
+**Output**: `"hello" does not have all unique characters.`  
+
+**Input**: `world`  
+**Output**: `"world" has all unique characters.`  
+
+#### **Find All Unique Characters**:
+**Input**: `hello`  
+**Output**: `Unique characters in '
