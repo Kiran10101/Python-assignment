@@ -1,0 +1,57 @@
+Here’s a Python code to generate the Fibonacci sequence up to a specified number of terms or within a specified range:
+
+---
+
+### Generate Fibonacci Sequence (Fixed Number of Terms):
+```python
+def generate_fibonacci_terms(n):
+    if n <= 0:
+        return "Number of terms must be positive."
+    sequence = [0, 1]
+    for _ in range(2, n):
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence[:n]
+
+# Example usage
+terms = int(input("Enter the number of terms: "))
+print(f"Fibonacci sequence ({terms} terms): {generate_fibonacci_terms(terms)}")
+```
+
+---
+
+### Generate Fibonacci Sequence (Up to a Max Value):
+```python
+def generate_fibonacci_up_to(max_value):
+    if max_value < 0:
+        return "Maximum value must be non-negative."
+    sequence = [0, 1]
+    while sequence[-1] + sequence[-2] <= max_value:
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence[:-1] if max_value < sequence[-1] else sequence
+
+# Example usage
+max_value = int(input("Enter the maximum value: "))
+print(f"Fibonacci sequence (up to {max_value}): {generate_fibonacci_up_to(max_value)}")
+```
+
+---
+
+### Explanation:
+1. **Fixed Number of Terms**:
+   - Starts with the sequence `[0, 1]`.
+   - Appends the sum of the last two numbers in the sequence until the desired length is reached.
+
+2. **Up to Max Value**:
+   - Starts with the sequence `[0, 1]`.
+   - Appends numbers as long as the next Fibonacci number does not exceed the specified max value.
+
+---
+
+### Example Outputs:
+1. **Fixed Number of Terms**:  
+   Input: `6`  
+   Output: `[0, 1, 1, 2, 3, 5]`  
+
+2. **Up to Max Value**:  
+   Input: `10`  
+   Output: `[0, 1, 1, 2, 3, 5, 8]`
