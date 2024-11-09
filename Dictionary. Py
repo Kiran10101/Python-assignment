@@ -1,0 +1,46 @@
+
+
+---
+
+### Sort Dictionary by Keys:
+```python
+def sort_dict_by_keys(d):
+    return dict(sorted(d.items()))
+
+# Example usage
+sample_dict = {"banana": 3, "apple": 5, "cherry": 1}
+sorted_by_keys = sort_dict_by_keys(sample_dict)
+print("Sorted by keys:", sorted_by_keys)
+```
+
+---
+
+### Sort Dictionary by Values:
+```python
+def sort_dict_by_values(d):
+    return dict(sorted(d.items(), key=lambda item: item[1]))
+
+# Example usage
+sample_dict = {"banana": 3, "apple": 5, "cherry": 1}
+sorted_by_values = sort_dict_by_values(sample_dict)
+print("Sorted by values:", sorted_by_values)
+```
+
+---
+
+### Explanation:
+1. **Sorting by Keys**:
+   - Use `sorted(d.items())` to sort dictionary items by keys.
+   - Convert back to a dictionary using `dict()`.
+
+2. **Sorting by Values**:
+   - Use `sorted(d.items(), key=lambda item: item[1])` to sort by the second item in each key-value pair (i.e., the value).
+
+---
+
+### Output Example:
+For the dictionary `{"banana": 3, "apple": 5, "cherry": 1}`:
+- **Sorted by Keys**: `{'apple': 5, 'banana': 3, 'cherry': 1}`
+- **Sorted by Values**: `{'cherry': 1, 'banana': 3, 'apple': 5}`
+
+You can modify the code to sort in reverse order by adding `reverse=True` to the `sorted()` function.
