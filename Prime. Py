@@ -1,0 +1,52 @@
+
+
+---
+
+### Code to Check if a Number is Prime:
+```python
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+# Example usage
+number = int(input("Enter a number: "))
+if is_prime(number):
+    print(f"{number} is a prime number.")
+else:
+    print(f"{number} is not a prime number.")
+```
+
+---
+
+### Code to Find All Prime Numbers in a Range:
+```python
+def find_primes_in_range(start, end):
+    primes = []
+    for num in range(start, end + 1):
+        if num > 1:
+            for i in range(2, int(num**0.5) + 1):
+                if num % i == 0:
+                    break
+            else:
+                primes.append(num)
+    return primes
+
+# Example usage
+start = int(input("Enter the start of the range: "))
+end = int(input("Enter the end of the range: "))
+prime_numbers = find_primes_in_range(start, end)
+print(f"Prime numbers between {start} and {end}: {prime_numbers}")
+`
+
+### Example Outputs:
+1. **Check if Prime**:  
+   Input: `29`  
+   Output: `29 is a prime number.`  
+
+2. **Find Primes in Range**:  
+   Input: `10, 50`  
+   Output: `Prime numbers between 10 and 50: [11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]`
