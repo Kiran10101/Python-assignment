@@ -1,0 +1,57 @@
+
+
+---
+
+### Word Frequency Counter:
+```python
+def word_frequency(text):
+    # Normalize the text: convert to lowercase and remove punctuation
+    import string
+    text = text.lower().translate(str.maketrans('', '', string.punctuation))
+    
+    # Split the text into words
+    words = text.split()
+    
+    # Count the frequency of each word
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    
+    return frequency
+
+# Example usage
+text = input("Enter a string: ")
+frequencies = word_frequency(text)
+print("Word Frequencies:")
+for word, count in frequencies.items():
+    print(f"{word}: {count}")
+```
+
+---
+
+### Explanation:
+1. **Normalization**:
+   - Converts the text to lowercase to ensure case insensitivity.
+   - Removes punctuation using `str.translate` and `string.punctuation`.
+
+2. **Splitting**:
+   - Splits the text into a list of words using `str.split()`.
+
+3. **Counting**:
+   - Uses a dictionary to count occurrences of each word. The `get` method simplifies incrementing the count.
+
+---
+
+### Example Input and Output:
+**Input**:  
+`"Hello, world! Hello everyone."`
+
+**Output**:  
+```
+Word Frequencies:
+hello: 2
+world: 1
+everyone: 1
+```
+
+This program can be further enhanced to ignore specific stopwords or handle special cases like contractions. Let me know if you'd like any modifications!
